@@ -9,6 +9,14 @@
 body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
+  background: #000;
+}
+
+model-viewer {
+  --poster-color: transparent;
+  --progress-bar-height: 0;
+  --progress-bar-color: rgba(255, 105, 180, 0.5);
+  --progress-mask: none;
 }
 
 @keyframes float {
@@ -26,11 +34,88 @@ body {
 @keyframes pulse {
   0% {
     transform: scale(1);
+    opacity: 0.6;
   }
   50% {
     transform: scale(1.1);
+    opacity: 0.9;
   }
   100% {
     transform: scale(1);
+    opacity: 0.6;
   }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: brightness(1) blur(2px);
+  }
+  50% {
+    filter: brightness(1.3) blur(1px);
+  }
+}
+
+/* Hide progress bar but keep functionality */
+.progress-bar {
+  visibility: hidden;
+  height: 0;
+}
+
+/* Add flower glow effect */
+.flower-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255,105,180,0.2) 0%, rgba(0,0,0,0) 70%);
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
+  animation: glow 3s infinite ease-in-out;
+}
+
+/* Add sparkle effect */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: sparkle 1.5s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Add butterfly glow effect */
+.butterfly-glow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(255,182,193,0.9) 0%, rgba(255,182,193,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  filter: blur(1px);
+  box-shadow: 0 0 15px rgba(255,182,193,0.8);
+  animation: glow 2s infinite ease-in-out;
+}
+
+/* Add ambient light effect */
+.ambient-light {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255,182,193,0.2) 0%, rgba(0,0,0,0) 70%);
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
 }

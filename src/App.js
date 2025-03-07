@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import MessageCard from './components/MessageCard';
 import FloatingHearts from './components/FloatingHearts';
+import FlowerBouquet from './components/FlowerBouquet';
 import './App.css';
 
 const AppContainer = styled.div`
@@ -64,6 +65,7 @@ const Title = styled(motion.h1)`
   padding: 0 15px;
   width: 100%;
   max-width: 90vw;
+  white-space: pre-line;
 
   @media (max-width: 768px) {
     font-size: clamp(1.5rem, 4vw, 2rem);
@@ -76,24 +78,14 @@ const Title = styled(motion.h1)`
   }
 `;
 
-// Then in your JSX:
-<Title
-  initial={{ opacity: 0, y: -50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="responsive-title"
->
- Chúc mừng ngày 8/3, cún iu cụa anhhh!
-</Title>
-
-const PuppyContainer = styled(motion.div)`
+const FlowerContainer = styled(motion.div)`
   width: 100%;
-  height: 50vh;
+  height: 45vh;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 5;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   position: relative;
   
   &:after {
@@ -104,45 +96,13 @@ const PuppyContainer = styled(motion.div)`
     transform: translateX(-50%);
     width: 60%;
     height: 10px;
-    background: radial-gradient(ellipse at center, rgba(255,105,180,0.3) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(ellipse at center, rgba(255,192,203,0.3) 0%, rgba(0,0,0,0) 70%);
     border-radius: 50%;
     filter: blur(5px);
   }
 `;
 
-// Decorative frame around the puppy
-// const PuppyFrame = styled.div`
-//   position: absolute;
-//   width: 80%;
-//   height: 90%;
-//   border: 2px dashed rgba(255, 105, 180, 0.3);
-//   border-radius: 20px;
-//   z-index: 4;
-//   pointer-events: none;
-  
-//   &:before, &:after {
-//     content: '';
-//     position: absolute;
-//     width: 20px;
-//     height: 20px;
-//     border-radius: 50%;
-//     background-color: rgba(255, 105, 180, 0.5);
-//   }
-  
-//   &:before {
-//     top: -10px;
-//     left: -10px;
-//   }
-  
-//   &:after {
-//     bottom: -10px;
-//     right: -10px;
-//   }
-// `;
-
 function App() {
-  const modelViewerRef = useRef(null);
-  
   const stars = Array.from({ length: 50 }).map((_, i) => {
     const size = Math.random() * 3 + 1;
     const opacity = Math.random() * 0.5 + 0.3;
@@ -169,20 +129,12 @@ function App() {
     { size: 180, x: '15%', y: '75%', delay: 0.9 },
   ];
 
-  useEffect(() => {
-    if (modelViewerRef.current) {
-      // Any model-viewer specific setup
-    }
-  }, []);
-
   return (
     <AppContainer>
-      {/* Background stars */}
       <StarContainer>
         {stars}
       </StarContainer>
       
-      {/* Decorative circles */}
       {circles.map((circle, index) => (
         <DecorationCircle
           key={index}
@@ -205,32 +157,16 @@ function App() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Chúc mừng ngày 8/3, cún iu cụa anhhh!
+        {'Chúc mừng ngày 8/3,\nChúc các người đẹp Phan Thiết của Tui!'}
       </Title>
       
-      <PuppyContainer
+      <FlowerContainer
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        {/* <PuppyFrame /> */}
-        <model-viewer
-          ref={modelViewerRef}
-          src="/toon_cute_dog.glb"
-          alt="A cute cartoon dog"
-          auto-rotate
-          camera-controls
-          camera-orbit="0deg 10deg 2m"
-          min-camera-orbit="auto auto auto"
-          max-camera-orbit="auto auto auto"
-          shadow-intensity="1"
-          environment-image="neutral"
-          exposure="1"
-          ar
-          ar-modes="webxr scene-viewer quick-look"
-          style={{ width: '100%', height: '90%' }}
-        ></model-viewer>
-      </PuppyContainer>
+        <FlowerBouquet />
+      </FlowerContainer>
       
       <MessageCard marginBottom={true} />
     </AppContainer>

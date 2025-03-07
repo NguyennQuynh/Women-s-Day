@@ -8,14 +8,14 @@ const CardContainer = styled(motion.div)`
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   border-radius: 24px;
-  padding: 35px;
+  padding: 25px;
   max-width: 550px;
   width: 90%;
   box-shadow: 
     0 10px 30px rgba(255, 105, 180, 0.3),
     0 0 20px rgba(255, 182, 193, 0.2),
     inset 0 0 10px rgba(255, 255, 255, 0.5);
-  margin-top: 20px;
+  margin-top: -20px;
   margin-bottom: ${props => props.marginBottom ? '30px' : '0'};
   z-index: 10;
   position: relative;
@@ -53,29 +53,29 @@ const CardContainer = styled(motion.div)`
 `;
 
 const MessageWrapper = styled(motion.div)`
-  min-height: 120px;
+  min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 const Message = styled(motion.p)`
-  font-size: 1.3rem;
-  line-height: 1.7;
+  font-size: 1.2rem;
+  line-height: 1.6;
   color: #333;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-family: 'Comic Sans MS', 'Bubblegum Sans', 'Indie Flower', cursive;
   text-align: center;
   position: relative;
   
   &:first-letter {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #ff69b4;
   }
   
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 `;
 
@@ -83,11 +83,12 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
+  margin-top: 10px;
   
   &:before {
     content: '';
     position: absolute;
-    top: -20px;
+    top: -10px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
@@ -100,9 +101,9 @@ const Button = styled(motion.button)`
   background: linear-gradient(45deg, #ff69b4, #ffb6c1);
   border: none;
   border-radius: 50px;
-  padding: 14px 28px;
+  padding: 12px 24px;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 
@@ -111,6 +112,7 @@ const Button = styled(motion.button)`
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  margin-bottom: 10px;
   
   &:before {
     content: '';
@@ -181,12 +183,12 @@ const CustomHeart = ({ color }) => (
 );
 
 const messages = [
-    "Gửi đến người phụ nữ tuyệt vời nhất trong cuộc đời anh, em mang đến niềm vui và hạnh phúc cho mỗi ngày.",
-    "Nụ cười của em thắp sáng thế giới của anh, và tình yêu của em lấp đầy trái tim anh bằng sự ấm áp.",
-    "Vào ngày đặc biệt này, anh muốn em biết em có ý nghĩa như thế nào đối với anh.",
-    "Em không chỉ là bạn gái của anh, em là bạn thân nhất của anh, là người bạn tâm giao và là tất cả của anh.",
-    "Anh trân trọng từng khoảnh khắc chúng ta bên nhau, và anh mong muốn tạo ra nhiều kỷ niệm đẹp hơn nữa.",
-    "Chúc mừng Ngày Phụ nữ, tình yêu của anh! Em xứng đáng có được tất cả hạnh phúc trên thế giới này."
+    "Gửi đến những gái đẹp của Phan Thiết, các bạn là những đóa hoa rực rỡ nhất của thành phố biển xinh đẹp này.",
+    "Dưới ánh nắng chan hòa của Phan Thiết, nụ cười và sự tận tâm của các bạn đã tô điểm thêm vẻ đẹp cho thành phố thân yêu.",
+    "Cảm ơn các bạn đã luôn nỗ lực không ngừng, vừa là người phụ nữ đảm đang, vừa là những người làm việc chuyên nghiệp và tài năng.",
+    "Mỗi ngày các bạn đều mang đến nguồn năng lượng tích cực, sự nhiệt huyết và tinh thần làm việc hết mình, truyền cảm hứng cho mọi người xung quanh.",
+    "Chúc các bạn luôn mạnh khỏe, hạnh phúc và xinh đẹp. Mong rằng cuộc sống sẽ luôn tràn ngập niềm vui và những điều tốt đẹp nhất.",
+    "Nhân ngày Quốc tế Phụ nữ 8/3, 'Quỳnh' xin gửi đến các bạn lời chúc chân thành và sâu sắc nhất. Các bạn xứng đáng nhận được mọi điều tuyệt vời!"
 ];
 
 // Then update the MessageCard component to accept and pass the prop:
@@ -415,7 +417,7 @@ const MessageCard = ({ marginBottom }) => {
                                 repeatType: "reverse"
                             }}
                         >
-                            I Love You
+                            Happy Women's Day!
                         </motion.div>
                     </FinalMessage>
                 </FullscreenOverlay>
