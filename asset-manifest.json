@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Women-s-Day/static/css/main.e8bf0714.css",
-    "main.js": "/Women-s-Day/static/js/main.0370839d.js",
+    "main.js": "/Women-s-Day/static/js/main.a9b154fe.js",
     "static/js/453.9444bf89.chunk.js": "/Women-s-Day/static/js/453.9444bf89.chunk.js",
     "index.html": "/Women-s-Day/index.html",
     "main.e8bf0714.css.map": "/Women-s-Day/static/css/main.e8bf0714.css.map",
-    "main.0370839d.js.map": "/Women-s-Day/static/js/main.0370839d.js.map",
+    "main.a9b154fe.js.map": "/Women-s-Day/static/js/main.a9b154fe.js.map",
     "453.9444bf89.chunk.js.map": "/Women-s-Day/static/js/453.9444bf89.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e8bf0714.css",
-    "static/js/main.0370839d.js"
+    "static/js/main.a9b154fe.js"
   ]
 }
